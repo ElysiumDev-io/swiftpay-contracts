@@ -1,0 +1,21 @@
+# Rust
+target/
+Cargo.lock
+
+# Soroban
+*.wasm
+*.soroban
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env

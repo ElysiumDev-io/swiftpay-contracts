@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Rust
+      uses: dtolnay/rust-toolchain@stable
+
+    - name: Install Soroban CLI
+      run: cargo install soroban-cli
+
+    - name: Build contracts
+      run: |
+        for contract in contracts/*/; do
+          if [ -d "$contract" ]; then
+            echo "Building $contract"
+            cd "$contract"
+            soroban contract build
+            cd -
+          fi
+        done
+
+    - name: Run tests
+      run: |
+        for contract in contracts/*/; do
+          if [ -d "$contract" ]; then
+            echo "Testing $contract"
+            cd "$contract"
+            cargo test
+            cd -
+          fi
+        done
