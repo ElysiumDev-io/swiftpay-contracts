@@ -211,14 +211,6 @@ See our [Security Policy](SECURITY.md) for more information.
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
-## Support
-
-- **Documentation**: [docs.swiftpay.io](https://docs.swiftpay.io)
-- **Community Forum**: [forum.swiftpay.io](https://forum.swiftpay.io)
-- **Discord**: [discord.gg/swiftpay](https://discord.gg/swiftpay)
-- **Twitter**: [@SwiftPay](https://twitter.com/SwiftPay)
-
----
 
 Built with ❤️ on the Stellar network using Soroban.
 
